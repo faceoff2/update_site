@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>업데이트 방법 - 타타대우 상용차내비게이션 업데이트 서비스</title>
+<link rel="stylesheet" type="text/css" href="./css/font.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery.vticker-min.js"></script>
+<script type="text/javascript" src="./js/slick.js"></script>
+<script type="text/javascript" src="./js/ui.js"></script>
+<script type="text/javascript" src="./js/jquery.bpopup.min.js"></script>
+<script type="text/javascript" src="./js/scrollmove.js"></script>
+<script>
+$(function() {
+	$('#mw_button, #mw_button2, #mw_button3').bind('click', function(e) {
+		e.preventDefault();
+		$('#mw_update').bPopup();
+		$('.slider-paging-number .slick-active').trigger('click');
+	});
+});
+
+</script>
+</head>
+<body class="subbody">
+<div class="tatadaewoonaviupdate_wrap">
+	<!-- S: 헤더 -->
+	<header class="toparea">
+		<h1 class="logo"><a href="main.html"><img src="./images/common/logo_tata.png" alt="TATA" /></a></h1>
+		<p class="gotata"><a href="#" alt="타타대우 상용차내비게이션 업데이트 서비스"></a></p>
+		<ul>
+			<li><a href="notice_list.html"><strong>업데이트 공지</strong> </a></li>
+			<li><a href="smartupdatepartner.html"><strong>스마트 업데이트 파트너</strong></a></li>
+			<li class="on"><a href="howtoupdate_02.html"><strong>업데이트 방법</strong></a></li>
+			<li><a href="supportingvehicle.html"><strong>지원차량</strong></a></li>
+			<li><a href="faq_list.html"><strong>자주하는 질문</strong></a></li>
+			
+		</ul>
+	</header>
+
+	<!-- //E: 헤더 -->
+
+	<!-- S: 컨테이너 -->
+	<section class="container">
+		<div class="content">
+			<div class="howtoupdatebg">
+			<p class="howtoupdatebox">
+				<img src="./images/howtoupdate/img_howtoupdate.png" alt="한눈에 알아보는 내비업데이트 안내 1.차량의 SD카드를 분리합니다. 2.SD카드를 컴퓨터에 삽입 3.스마트업데이트파트너 다운로드 4.스마트업데이트파트너 설치 5.스마트업데이트파트너 실행하여 업데이트 완료 6.업데이트가 완료된 SD카드를 차량에 장착하세요. ●전용 프로그램 설치 PC 권장 사양 -운영체제:Windows2000(32bit) / XP / Vista / 7 / 8 / 10 (32bit/64bit) -웹브라우저:Microsoft Internet Explorer 7.0이상(권장) -하드디스크:C드라이브, 다운르도 HDD 여유 용량 16GB 이상 ●업데이트 전 확인사항 고객님의 내비게이션 시스템을 다시 한번 확인하시기 바랍니다. (타타대우 내비게이션과 모젠 내비게이션은 프로그램 및 업데이트 방법에 차이가 있습니다.) 내비게이션 업데이트는 이동식 저장매체(USB, DVD, SD카드)를 통하여 진행됩니다." />
+				<a href="smartupdatepartner.html" class="btn_update_01" title="바로 다운로드"><span>바로 다운로드</span></a>
+				<a href="#" id="mw_button" class="btn_update_02" title="업데이트 안내를 화면으로 확인해 보세요."><span>업데이트 안내를 화면으로 확인해 보세요.</span></a>
+			</p>
+		</div>
+			<div>
+				<p class = "updatepartnerspec">
+				<img src="./images/common/img_spec.png" alt="">
+				</p>
+			</div>
+		</div>
+
+		<!-- 팝업 -->
+		<div id="mw_update" class="mw" style="display:none">
+			<!-- <div class="bg"></div> -->
+			<div class="popwrap">
+				<div>
+					<div class="pop_content">
+						<ul class="tabs">
+							<li><a href="#howtoupdate_con_01">SUP <strong>설치</strong>방법 안내</a></li>
+							<li><a href="#howtoupdate_con_02">SUP <strong>실행</strong>방법 안내</a></li>
+							<li><a href="#howtoupdate_con_03"><strong>차량</strong>에서 업데이트방법 안내</a></li>
+						</ul>
+						
+						<!-- S: SUP 설치방법 안내 -->
+						<div id="howtoupdate_con_01" class="tab_section">
+							<div class="tit_area">
+								<p>스마트 업데이트 파트너 <strong>설치방법</strong> 안내</p>
+							</div>
+							<div class="box section_memory">
+								<div class="main_img_slide_c">
+									<p>
+										<img src="./images/howtoupdate/tuto1_p01.png" alt="1">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto1_p02.png" alt="2">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto1_p03.png" alt="3">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto1_p04.png" alt="4">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto1_p05.png" alt="5">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto1_p06.png" alt="6">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/img_howtoupdate02_14.png" alt="7">
+									</p>
+								</div>
+								<div class="memory_text"></div>
+							</div>
+
+						</div>
+						<!-- //E: SUP 설치방법 안내 -->
+
+						<!-- S: SUP 실행방법 안내 -->
+						<div id="howtoupdate_con_02" class="tab_section">
+							<div class="tit_area">
+								<p>스마트 업데이트 파트너 <strong>실행방법</strong> 안내</p>
+							</div>
+							<div class="box section_memory">
+								<div class="main_img_slide_c">
+									<p>
+										<img src="./images/howtoupdate/tuto2_p01.png" alt="1">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p02.png" alt="2">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p03.png" alt="3">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p04.png" alt="4">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p05.png" alt="5">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p06.png" alt="6">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p07.png" alt="7">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p08.png" alt="8">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p09.png" alt="9">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p10.png" alt="10">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p11.png" alt="11">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p12.png" alt="12">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto2_p13.png" alt="13">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/img_howtoupdate02_14.png" alt="14">
+									</p>
+								</div>
+								<div class="memory_text"></div>
+							</div>
+						</div>
+						<!-- //E: SUP 실행방법 안내 -->
+
+						<!-- S: 차량에서 업데이트방법 안내 -->
+						<div id="howtoupdate_con_03" class="tab_section">
+							<div class="tit_area">
+								<p>차량에서 시스템업데이트 <strong>실행방법</strong>  안내</p>
+							</div>
+							<div class="box section_memory">
+								<div class="main_img_slide_c">
+									<p>
+										<img src="./images/howtoupdate/tuto3_p01.png" alt="1">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto3_p02.png" alt="2">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto3_p03.png" alt="3">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto3_p04.png" alt="4">
+									</p>
+									<p>
+										<img src="./images/howtoupdate/tuto3_p05.png" alt="5">
+									<p>
+										<img src="./images/howtoupdate/img_howtoupdate02_14.png" alt="6">
+									</p>
+								</div>
+								<div class="memory_text"></div>
+							</div>
+						</div>
+						<!-- //E: 차량에서 업데이트방법 안내 -->
+						<span class="close"><a href="#" class="b-close" title="팝업 닫기">닫기</a></span>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+		<!-- // 팝업 -->
+
+	</section>
+	<!-- //E: 컨테이너 -->
+
+	<!-- S: 푸터 -->
+	<footer class="bottomarea">
+		<div>
+			<span class="logo"><img src="./images/common/logo_kt.png" alt="Product by kt" /></span>
+			<br>
+			<address>고객문의.&nbsp;&nbsp;<a style="text-decoration: none;">타타대우상용차 콜센터 080-888-7777</a></address>
+			<br>
+			<span class="copyright">Copyright&copy;&nbsp;<span>2021 kt corp.</span>&nbsp;&nbsp;All RIGHTS RESERVED.</span>
+		</div>
+	</footer>
+	<!-- //E: 푸터 -->
+
+</div>
+</body>
+</html>

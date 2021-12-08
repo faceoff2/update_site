@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* 웹폰트 */
+@font-face { 
+font-family:'nanumgothic';
+src:url('../font/nanumgothic.eot');
+src:url('../font/nanumgothic.eot?#iefix') format('embedded-opentype'), url('../font/nanumgothic.woff2') format('woff2'), url('../font/nanumgothic.woff') format('woff'), url('../font/nanumgothic.ttf') format('truetype'); url('../font/nanumgothic.svg#nanumgothic') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+.nanumgothic_regular {font-family:nanumgothic !importatn}
+@font-face { 
+font-family:'nanumgothicbold';
+src:url('../font/nanumgothicbold.eot');
+src:url('../font/nanumgothicbold.eot?#iefix') format('embedded-opentype'), url('../font/nanumgothicbold.woff2') format('woff2'), url('../font/nanumgothicbold.woff') format('woff'), url('../font/nanumgothicbold.ttf') format('truetype'); url('../font/nanumgothicbold.svg#nanumgothicbold') format('svg');
+font-weight:bold;
+font-style:normal;
+}
+.nanumgothic_bold {font-family:nanumgothicbold !important}
+
+@font-face { 
+font-family:'nanumsquarer';
+src:url('../font/nanumsquarer.eot');
+src:url('../font/nanumsquarer.eot?#iefix') format('embedded-opentype'), url('../font/nanumsquarer.woff2') format('woff2'), url('../font/nanumsquarer.woff') format('woff'), url('../font/nanumsquarer.ttf') format('truetype'); url('../font/nanumsquarer.svg#nanumsquarer') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+.nanumsquare_regular {font-family:nanumsquarer !important}
+
+@font-face { 
+font-family:'nanumsquareb';
+src:url('../font/nanumsquareb.eot');
+src:url('../font/nanumsquareb.eot?#iefix') format('embedded-opentype'), url('../font/nanumsquareb.woff2') format('woff2'), url('../font/nanumsquareb.woff') format('woff'), url('../font/nanumsquareb.ttf') format('truetype'); url('../font/nanumsquareb.svg#nanumsquareb') format('svg');
+font-weight:bold;
+font-style:normal;
+}
+.nanumsquare_bold {font-family:nanumsquareb !important}

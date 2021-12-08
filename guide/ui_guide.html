@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>코딩가이드</title>
+<link rel="stylesheet" media="screen,projection" href="css/ui.totop.css" />
+<style>
+html, body {margin:0; padding:0 10px; font-size:13px; line-height:1.4; font-family:dotum,'돋움'}
+strong {color:red}
+.box {border:#444 solid 1px; background-color:#fff; width:50%; text-align:center}
+.box.red {border:red solid 1px}
+code {display:block; width:95%; padding:10px; background-color:#ddd; font-weight:normal; word-wrap:break-word}
+table {width:95%; font-weight:normal}
+table caption {display:none}
+table th {background-color:yellowgreen; text-align:center; font-weight:bold}
+table td {background-color:palegoldenrod}
+h1 {text-align:center}
+h2 {margin:50px 0 0}
+ol li {margin:20px 0 0; font-weight:bold}
+ol li p {font-weight:normal}
+sub {font-size:12px; font-weight:normal}
+span {color:green; font-weight:normal}
+b {color:#000; font-weight:bold}
+.right {padding-right:5%; text-align:right}
+.wrap {overflow:hidden; width:95%; margin:10px auto; padding:10px; background-color:palegoldenrod}
+.wrap .toparea {overflow:hidden; width:100%; margin:10px auto; background-color:#fff; text-align:center}
+.wrap .toparea p {width:30%; margin:0; padding:0; background-color:#696969; text-align:left; color:#fff; font-weight:bold}
+.wrap .toparea .gnb {float:right; width:45%; height:25px; margin:10px 10px 0; background-color:#dcdcdc; line-height:25px}
+.wrap .toparea .logo {float:left; width:25%; height:30px; margin:45px 10px 10px; background-color:#dcdcdc; line-height:30px; font-size:13px}
+.wrap .toparea .topmenu {float:right; width:60%; height:30px; margin:10px; background-color:#dcdcdc; line-height:30px}
+.wrap .toparea .subvisual {clear:both; height:50px; margin:10px; background-color:#dcdcdc; line-height:50px}
+.wrap .leftarea {float:left; width:24%; height:400px; margin:0 3% 10px 0; background-color:#fff; text-align:center}
+.wrap .leftarea p {margin:0; background-color:#696969; text-align:left; color:#fff}
+.wrap .leftarea div {margin:10px; background-color:#dcdcdc}
+.wrap .leftarea .leftmenu {height:120px; line-height:120px}
+.wrap .leftarea .bannerarea {height:75px; line-height:75px}
+.wrap .leftarea .cscenter {height:60px; line-height:60px}
+.wrap .contentsarea {float:left; width:50%; height:400px; margin:0 3% 10px 0; background-color:#fff; text-align:left}
+.wrap .contentsarea p {margin:0; background-color:#696969; color:#fff}
+.wrap .contentsarea div {margin:10px; background-color:#dcdcdc}
+.wrap .contentsarea .pagenavi {height:30px; padding:0 10px; line-height:30px}
+.wrap .contentsarea .contentsbox {height:220px; padding:60px 10px 0;line-height:20px}
+.wrap .rightarea {float:right; width:20%; height:400px; margin:0 0 10px 0; background-color:#fff; text-align:left}
+.wrap .rightarea p {margin:0; background-color:#696969; color:#fff}
+.wrap .rightarea div {margin:10px; background-color:#dcdcdc}
+.wrap .rightarea .custom {height:125px;padding:25px 0 0 0}
+.wrap .rightarea .adbox {height:60px; text-align:center; line-height:60px}
+.wrap .bottomarea {clear:both; height:50px; margin:0; background-color:#fff; text-align:left}
+.wrap .bottomarea p {display:block; width:25%; margin:0; background-color:#696969; color:#fff; font-weight:bold}
+.wrap .bottomarea .copyright {float:right; width:70%; margin:0 10px 0 0; background-color:#dcdcdc}
+
+</style>
+</head>
+<body>
+<h1>코딩 가이드(UI Publising Guide)</h1>
+<ol>
+	<li><a href="#intro">개요</a></li>
+	<li><a href="#basic">기본규칙</a></li>
+	<li><a href="#htmlgrammar">HTML 문법</a></li>
+	<li><a href="#cssgrammar">CSS 문법</a></li>
+	<li><a href="#naming">이미지 및 파일명 네이밍, 폴더구조 규칙</a></li>
+	<li><a href="#reset">초기파일</a></li>
+</ol>
+
+<h2 id="intro">1. 개요</h2>
+<p>
+마크업 개발은 웹 개발의 기본 골격이며, 디자인과 개발의 중심에서 웹사이트를 단단하게 만들어주는 역할은 한다.<br />
+단단한 웹사이트, 댄시더홈이 제안한 방탄조끼 같은 웹사이트를 만들기 위해서는 최적화된 코드를 작업자간의 약속으로 지켜야 한다. 이 가이드 문서는 최적화된 코드를 가질 수 있도록 표준을 제시한다.
+</p>
+<p>
+프로젝트 작업을 진행함에 있어서 공동작업에 효율적으로 대처하기 위하여 표준화된 코딩규칙을 제시하고, 공유하여 코딩규칙이 통일된 파일을 만들고자 함에 목적이 있으며, 추후 수정, 보완이나 유지보수 시 용이하도록 하기 위하여 통일된 형식으로 코드를 작성하여 업무 효율을 높일 수 있도록 한다.
+</p>
+<p>
+<strong>수주 프로젝트 특성상 클라이언트의 요구되는 사항이 있을 시는 본 내용을 따르지 않을 수 있다.</strong>
+</p>
+
+<h2 id="basic">2. 기본 규칙</h2>
+<ol>
+	<li>HTML의 문서는 의미 있는 마크업, 논리적인 구조로 구성되어야 한다.</li>
+	<li>레이아웃 설계 시 컨텐츠가 없을 경우에는 Footer가 항상 브라우저 하단에 붙게 한다.<p class="caution">* 기본적인 레이아웃인 경우만 해당, 
+     브라우저의 세로 스크롤이 나와도 상관 없는 디자인 레이아웃인 경우에는 제외</p></li>
+	<li>문서는 반드시 DTD를 선언하도록 한다. HTML5와 XHTML 타입의 DTD를 프로젝트의 성격에 맞게 사용하며, XHTML 문서의 경우는 DTD는 Transitional 타입을 사용한다.</li>
+	<li>W3C의 Validator(한글버전, <a href="http://validator.kldp.org" target="_blank">http://validator.kldp.org</a>) 를 통해 최소한의 디버깅을 거칠 것.</li>
+</ol>
+
+<h2 id="htmlgrammar">3. HTML 문법</h2>
+<ol>
+	<li>
+		정렬간격
+		<p>Editplus 및 기타 에디터 기본 간격 설정은 <strong>설정 > 설정 및 구문강조 > 탭/들여쓰기</strong> 항목에서 설정한다.</p>
+		<code>
+			탭 : 4  / 들여쓰기 : 4 / 탭 대신 공백삽입에 체크 해제
+		</code>
+	</li>
+	<li>
+		대/소문자의 사용
+		<p>모든 태그 소문자로 작성한다. (id와 class값 및 css 포함, <strong>DTD 제외, js 제외</strong>)</p>
+	</li>
+	<li>
+		닫힘 태그의 사용
+		<p>홀로 쓰이는 태그는 닫힘 태그를 사용한다 &lt;input /&gt; &lt;br /&gt; &lt;hr /&gt; &lt;col /&gt; &lt;img /&gt;</p>
+		<p><sub>* HTML5에서는 닫힘 태그를 사용하지 않아도 무방하다, 하지만 웹 사이트의 통일성을 갖출 것</sub></p>
+	</li>
+	<li>
+		주석처리
+		<p>작업자간의 원활한 커뮤니케이션을 위하여 해당 요소 별로 구분되어 질 수 있는 주석을 표시한다.</p>
+		<code>
+			&lt;!–- S: 해당 태그 네임 --&gt;&nbsp;&nbsp;&nbsp;&nbsp;<strong>시작 주석</strong><br />
+			.<br />
+			.<br />
+			&lt;!–- // E: 해당 태그 네임 --&gt;&nbsp;&nbsp;&nbsp;&nbsp;<strong>마무리 주석</strong><br /><br />
+
+			&lt;!– 해당 태그 네임 -&gt; &nbsp;&nbsp;&nbsp;&nbsp;<strong>한 줄 주석 일 경우</strong><br /><br />
+
+			&lt;!–------- 해당 태그 네임 ----------&gt;<br />
+			<strong>이러한 방식의 주석은 사용하지 않도록 한다. 두개 이상의 하이푼 사용 금지(X)</strong>
+		</code>
+	</li>
+	<li>
+		공백의 빈 줄 지양
+		<p>HTML코드의 빈 줄은 의미 있는 객체를 구분하기 위하여 사용한다. 빈 줄은 한 줄로 제한한다.</p>
+
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					&lt;div class="toparea"&gt;&lt;/div&gt;<br />
+					<div class="box red">빈 줄</div>
+					<div class="box red">빈 줄</div>
+					&lt;div class="leftarea"&gt;&lt;/div&gt;
+				</td>
+				<td>
+					&lt;div class="toparea"&gt;&lt;/div&gt;<br />
+					<div class="box">빈 줄</div>
+					&lt;div class="leftarea"&gt;&lt;/div&gt;
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		블록 태그와 인라인 태그
+		<p>태그 사용시 줄바꿈이 되는지의 여부에 따라 블록 태그와 인라인 태그로 나눌 수 있다. 또한 인라인 태그는 좌우에만 여백을 줄 수 있으며, 상하로는 여백을 줄 수 없다는 차이점이 있다.</p>
+		<p>중간단계인 inline-block 태그를 필요에 따라 사용 할 수 있다.</p>
+		<code>
+			대표 block태그 : &lt;div&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;, &lt;form&gt; 등<br />
+			대표 inline태그 : &lt;span&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;i&gt;, &lt;img&gt;, &lt;a&gt;, &lt;input&gt;  등<br />
+			inline-block 태그의 예시 : display:inline-block 속성으로 사용 가능하다
+		</code>
+	</li>
+	<li>
+		모든 속성은 큰 따옴표(&quot; &quot;)로 묶는다 <strong>(홑 따옴표 사용 불가)</strong>
+		<table>
+			<caption></caption>
+			<colgroup>
+			<col width="50%" />
+			<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					&lt;img src=<strong>&apos;</strong>bg_box.gif<strong>&apos;</strong> width=<strong>&apos;</strong>200<strong>&apos;</strong> height=<strong>&apos;</strong>100<strong>&apos;</strong> alt=<strong>&apos;&apos;</strong> /&gt;<br /><br />
+
+					&lt;img src=bg_box.gif width=200 height=100 alt= /&gt;
+				</td>
+				<td>
+					&lt;img src=&quot;bg_box.gif&quot; width=&quot;200&quot; height=&quot;100&quot; alt=&quot;&quot; /&gt;
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		속성과 속성 값은 함께 사용되어야 한다
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					&lt;select <strong>selected</strong>&gt;&lt;option&gt;선택&lt;/option&gt;&lt;/select&gt;<br /><br />
+
+					&lt;input type=&quot;checkbox&quot; <strong>checked</strong>&gt;
+				</td>
+				<td>
+					&lt;select <strong>selected=&quot;selected&quot;</strong>&gt;&lt;option&gt;선택&lt;/option&gt;&lt;/select&gt;<br /><br />
+
+					&lt;input type=&quot;checkbox&quot; <strong>checked=&quot;checked&quot;</strong>&gt;
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		엔티티코드의 사용
+		<p>특수 문자는 엔티티 코드로 변환하여 넣어준다. (링크 url의 특수문자 포함)<br />
+		엔티티 코드 참조 URL <a href="http://entitycode.com/" target="_blank">http://entitycode.com/</a></p>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					&lt;p&gt;대답이 돌아왔다 <strong>&quot;</strong>그대가 원하는 대로<strong>&quot;</strong>&lt;/p&gt;<br /><br />
+
+					&lt;a href=&quot;list.asp<strong>&</strong>id=2&quot;&gt;
+				</td>
+				<td>
+					&lt;p&gt;대답이 돌아왔다 ＆lt;그대가 원하는 대로＆gt;&lt;/p&gt;<br /><br />
+
+					&lt;a href=&quot;list.asp＆id=2&quot;&gt;
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		비표준 태그 사용 금지
+		<p>font, center, font, strike, u, s, applet, basefont, dir, isindex, xmp</p>
+	</li>
+	<li>
+		Image 태그에 width, height 속성 값은 쓰지 않는다. 썸네일에만 이미지 사이즈 속성은 선언한다.
+		<code>
+			ex) &lt;img src=&quot;&quot; alt =&quot;&quot; /&gt;<br /> 
+			<sub><strong>* 이미지 링크 시 생기는 border 는 css에서 제어한다,  img {border:0}</strong></sub>
+		</code>
+	</li>
+	<li>
+		인라인 스타일 사용 지양
+		<p>꼭 필요한 경우가 아니라면 태그 및 JS, CSS를 인라인 태그로 넣지 않는다. CSS로 처리 가능한 모든 스타일은 표현한다. (많은 양의 이미지 롤오버 함수 제외)</p>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="100%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시 - 사용 제한</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					&lt;div <strong>style=&quot;width:100px; height:50px&quot;</strong>&gt;<br /><br />
+
+					&lt;table <strong>bgcolor=&quot;#ff0000&quot;</strong>&gt;
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		웹문서의 인코딩 선언
+		<p>웹문서는 반드시 인코딩 정보를 선언하며, 문서 저장 시에도 선언한 인코딩 방식과 동일한 방식을 선택하여 저장한다. 클라이언트 및 개발파트와의 별도 협의가 없을 시에는 UTF-8로 선언 및 저장한다.</p>
+		<sub><strong>DB저장 용량이나 트래픽에 영향을 많이 받을 경우엔 euc-kr로 선언하는 함을 권장하며,
+		utf-8 은 한글을 3Byte, euc-kr 은 한글을 2Byte 차지하여 하위 브라우저 버전에서 링크의 스타일에 영향을 줄 수 있다.</strong></sub>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="100%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>여러 방식의 인코딩 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					&lt;meta charset=&quot;utf-8&quot;&gt;  (HTML5, UTF-8, 영문, 중문, 일문, 한글 등 지원)<br /><br />
+
+					&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;<br />(XHTML1.0, UTF-8, 영문, 중문, 일문, 한글 등 지원)<br /><br />
+
+					&lt;meta charset=&quot;euc-kr&quot;&gt;  (HTML5, EUC-KR, 한글만 지원)<br />
+
+					&lt;meta charset=&quot;utf+8&quot;&gt;  (HTML5, UTF+8, 베트남어 계열 지원)
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		각종 HTML 태그 요소의 속성
+		<ol type="A">
+			<li>
+				&lt;head&gt;
+				<p>DTD, meta, title, style link, script link 순서로 요소를 선언한다.</p>
+			</li>
+			<li>
+				&lt;body&gt;
+				<p>필요 시에 각 메뉴 별로 body id 또는 class를 지정한다.</p>
+			</li>
+			<li>
+				&lt;fieldset&gt;
+				<p>폼 요소의 집합으로서 각 폼 요소들을 그루핑 하기 위해 선언한다.<br />
+				자식 요소인 &lt;legend&gt;에 그룹의 이름을 표현한다.</p>
+				<code>
+					&lt;fieldset&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;legend&gt;검색&lt;/legend&gt;</strong><br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;text&quot;&gt;&lt;button type=&quot;button&quot;&gt;&lt;/button&gt;<br />
+					&lt;/fieldset&gt;
+				</code>
+			</li>
+			<li>
+				&lt;input&gt;, &lt;label&gt;
+				<p>text type일 경우 동일한 스타일의 텍스트박스 너비 값이 다르면 인라인 스타일로 width 값을 제어한다.</p>
+				<code>
+					&lt;input type=&quot;text&quot; <strong>style=&quot;width:200px&quot;</strong>&gt;
+				</code>
+				<p>&lt;label&gt; 요소를 함께 선언하여, 접근성을 높이거나, &lt;label&gt; 을 사용하지 않을 경우에는 title 속성을 이용하여 접근 할 수 있다.</p>
+				<code>
+					<strong>&lt;label for=&quot;telnum&quot;&gt;</strong>&lt;input type=&quot;text&quot; <strong>id=&quot;telnum&quot;</strong> style=&quot;width:200px&quot;&gt;<br />
+					&lt;input type=&quot;text&quot; <strong>title=&quot;전화번호&quot;</strong> style=&quot;width:200px&quot;&gt;
+				</code>
+			</li>
+			<li>
+				&lt;select&gt;
+				<p>동일한 스타일의 셀렉트박스 너비 값이 다르면 인라인 스타일로 width 값을 제어한다.</p>
+				<code>
+					&lt;select <strong>style=&quot;width:200px&quot;</strong>&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;
+				</code>
+			</li>
+			<li>
+				&lt;textarea&gt;
+				<p>cols, rows 속성을 반드시 입력하도록 한다. (validation 오류)<br />
+				최소 cols =&quot;30&quot;, rows=&quot;5&quot; 의 사이즈 속성을 넣어주도록 한다.</p>
+				<code>
+					&lt;textarea cols=&quot;&quot; rows=&quot;&quot;&gt;&lt;/textarea&gt;
+				</code>
+			</li>
+			<li>
+				&lt;button&gt;
+				<p>
+					폼 전송 역할은 submit type을 사용하며, 열기/닫기, 접기/펼치기, 스와이프, 터치 등의 UI 제어시에는 button type으로 선언한다.
+				</p>
+				<code>
+					&lt;button type=&quot;button&quot;&gt;펼쳐보기&lt;/button&gt;<br />
+					&lt;button type=&quot;submit&quot;&gt;form 전송&lt;/button&gt;
+				</code>
+			</li>
+			<li>
+				&lt;a&gt;
+				<p>기본적으로 인라인 태그, CSS를 통해 블록 태그를 만들어 모바일 터치영역을 조절 하기도 하며, HTML5 부터는 a 태그 안에 블록 속성 태그를 포함 할 수 있다. <sub><strong>(HTML5하위 DTD 에서는 불가)</strong></sub></p>
+			</li>
+			<li>
+				&lt;iframe&gt;
+				<p>페이지 성능에 영향을 주기 때문에, 사용을 자제하며, 부득이하게 사용해야 할 경우 width, height, title, frameborder, scrolling 속성을 선언한다.</p>
+			</li>
+			<li>
+				&lt;img&gt;
+				<p>src, width, height, title, alt 등의 속성을 순서대로 선택적으로 선언한다.</p>
+			</li>
+			<li>
+				&lt;table&gt;
+				<p>테이블은 게시판 및 데이터 테이블에서 사용한다. (들여쓰기 최소화 할 것)</p>
+				<code>
+					&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; summary=&quot;&quot;&gt;<br />
+					&lt;caption&gt;&lt;/caption&gt;<br />
+					&lt;colgroup&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;col width=&quot;100&quot; /&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;col width=&quot;100&quot; /&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;col width=&quot;*&quot; /&gt;<br />
+					&lt;/colgroup&gt;<br />
+					&lt;thead&gt;<br />
+					&lt;tr&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;th scope=&quot;cols&quot;&gt;title1&lt;/th&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;th scope=&quot;cols&quot;&gt;title2&lt;/th&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;th scope=&quot;cols&quot;&gt;title3&lt;/th&gt;<br />
+					&lt;/tr&gt;<br />
+					&lt;/thead&gt;<br />
+					&lt;tfoot&gt;<br />
+					&lt;tr&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;합계 등의 값이 들어갈 경우 사용&lt;/th&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;data2&lt;/td&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;data3&lt;/td&gt;<br />
+					&lt;/tr&gt;<br />
+					&lt;/tfoot&gt;<br />
+					&lt;tbody&gt;<br />
+					&lt;tr&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;sub title1&lt;/th&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;data2&lt;/td&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;data3&lt;/td&gt;<br />
+					&lt;/tr&gt;<br />
+					&lt;tr&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;sub title2&lt;/th&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;data2&lt;/td&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;data3&lt;/td&gt;<br />
+					&lt;/tr&gt;<br />
+					&lt;/tbody&gt;<br />
+					&lt;/table&gt;<br />
+				</code>
+				<p>
+					&lt;thead&gt;, &lt;tfoot&gt;, scope 은 데이터만 있는 테이블 일 경우엔 생략 할 수 있다.
+				</p>
+			</li>
+		</ol>
+	</li>
+</ol>
+
+<h2 id="cssgrammar">4. CSS 문법</h2>
+<ol>
+	<li>소문자 작성 준수</li>
+	<li>
+		속성 선언 방법
+		<p>
+			인코딩 선언시만 큰따옴표 선언<br />
+			그 외의 경우는 작은 따옴표 선언 (url 및 filter, alpa, opacity 등)
+		</p>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					@charset <strong>&apos;</strong>utf-8&apos;;<br /><br />
+
+					background:url(images/bg.gif) no-repeat<br /><br />
+
+					filter:alpha(opacity=<strong>&quot;</strong>90<strong>&quot;</strong>);<br /><br />
+
+					filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<strong>&quot;</strong>bg.png<strong>&quot;</strong>, sizingMethod=<strong>&quot;</strong>scale<strong>&quot;</strong>)	
+				</td>
+				<td>
+					@charset <strong>&quot;</strong>utf-8<strong>&quot;</strong>;<br /><br />
+
+					background:url(<strong>&apos;</strong>images/bg.gif<strong>&apos;</strong>) no-repeat<br /><br />
+
+					filter:alpha(opacity=<strong>&apos;</strong>90<strong>&apos;</strong>);<br /><br />
+
+					filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<strong>&apos;</strong>bg.png<strong>&apos;</strong>, sizingMethod=<strong>&apos;</strong>scale<strong>&apos;</strong>)
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		CSS는 외부선언 방식을 택한다. 
+		<code>
+			 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot; /&gt;
+		</code>
+	</li>
+	<li>
+		id는 레이아웃 요소 또는 스킵 네비게이션(건너띄기) 링크 시에만 사용한다.
+	</li>
+	<li>
+		인코딩 통일
+		<p>
+			HTML문서가 브라우저에서 바르게 해석 될 수 있도록 CSS의 인코딩은 HTML 인코딩과 동일하게 선언한다. CSS 상단에 선언한 인코딩과도 통일되어야 한다.
+		</p>
+	</li>
+	<li>
+		글꼴을 정하는 경우 font-family 선언 시 &quot;돋움&quot; 혹은 &quot;굴림&quot; 이라는 한글을 사용자 환경에서 인식하지 못하는 경우를 대비한다.
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>font-family:<strong>굴림</strong></td>
+				<td>font-family:gulim, &apos;굴림&apos;</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		CSS 선언 시 사용빈도가 높은 순서위주로 선언 순서를 통일한다.<br />
+		① display, visibility<br />
+		② overflow , clear, float<br />
+		③ position - top, right, bottom, left<br />
+		④ width, height<br />
+		⑤ margin, padding<br />
+		⑥ border<br />
+		⑦ background<br />
+		⑧ color<br />
+		⑨ vertical-align, text-align<br />
+		⑩ font, font-weight, text-decoraiton 
+	</li>
+	<li>
+		공백 및 빈 줄의 최소화
+		<p>CSS 선언 시 공백을 최소화 할 것, 하나의 속성이 끝날 때에만 띄어쓰기 공백을 
+		넣는다. CSS코드의 빈 줄은 의미 있는 객체를 구분하기 위해 사용한다. 
+		빈 줄은 한 줄을 초과하지 않는다.</p>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="20%" />
+				<col width="80%" />
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="rows">가이드를 준수하지 않은 예시</th>
+				<td>
+					.panel {width:<strong>＾</strong>100px; padding:<strong>＾</strong>10px}<br />
+					.panel {<strong>＾</strong>width:<strong>＾</strong>100px; padding:<strong>＾</strong>10px<strong>＾</strong>}<br />
+					<div class="box red">빈 줄</div>
+					<div class="box red">빈 줄</div>
+					.boxstyle1 {width:100px; font-size:12px}
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">가이드를 준수한 예시</th>
+				<td>
+					.panel {width:100px; padding:10px}<br />
+					<div class="box">빈 줄</div>
+					.boxstyle1 {width:100px; font-size:12px}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		수치 선언 시에는 0을 제외한 숫자에는 px등의 단위와 함께 사용한다.
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>.panel {padding:10px <strong>0px</strong> 5px 10px}</td>
+				<td>.panel {padding:10px 0 5px 10px}</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		CSS는 들여쓰기 하지 않는다. <sub><strong>(미디어 쿼리, 프린트 설정 등의 중첩되는 중괄호는 제외)</strong></sub><br />
+		줄 바꿈은 클래스 또는 아이디를 새로 선언할 경우만 가능 <sub><strong>(코드의 가독성을 위한 줄바꿈은 지양한다)</strong></sub>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					#top {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:100px;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:90px;<br />
+					}<br />
+					<strong>＾＾＾＾</strong>#top .gnb {<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:0 16px;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+				<td>
+					#top {width:100px; height:90px}<br />
+					#top .gnb {padding:0 16px}<br /><br />
+
+					@media all and (min-width:768px){<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;body {width:100px; font-size:12px}<br />
+					}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		외모만을 위한 중첩클래스는 사용은 최소화 한다.
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					.clearfix {clear:both}<br />
+					.mt20 {margin-top:20px !important}<br />
+					.pd10 {padding-left:10px !important}<br />
+					.panel {width:100%; height:50px; font-size:12px}<br /><br />
+					<strong>&lt;div class=&quot;panel mt20 pl10&quot;&gt;</strong>
+				</td>
+				<td>
+					.panel {clear:both; width:100%; height:50px; padding-left:10px; margin-top:20px; font-size:12px}<br /><br />
+					&lt;div class=&quot;panel&quot;&gt;
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		다중 선택자의 사용을 최소화 한다.
+		<p><strong>(IE6에서 다중 선택자를 읽지 못하는 현상이 많다.  IE6을 고려하지 않는 사이트 일 경우도 최소한으로만 사용할 것)</strong></p>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col width="50%" />
+				<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>가이드를 준수하지 않은 예시</th>
+				<th>가이드를 준수한 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					.panel {padding:10px 0px 5px 10px}<br />
+					.panel a.tab {display:block; text-align:center}<br />
+					.panel <strong>a.tab.on</strong> {background:#f00}
+				</td>
+				<td>
+					.panel {padding:10px 0px 5px 10px}<br />
+					.panel a.tab {display:block; text-align:center}<br />
+					.panel <strong>a.on</strong> {background:#ff0000}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		폼 태그에 해당하는 클래스는 아래를 사용한다.
+		<p><strong>(20page 초기파일 예시에서도 확인 가능)</strong></p>
+		<code>
+			input.txt {width:100px; height:17px; padding:3px 0 0 3px}  <span>/* 인풋 텍스트박스 전용, 속성 값은 변경 가능 */</span><br />
+			input.file {width:100px; height:17px; padding:3px 0 0 3px} <span>/* 인풋 파일박스 전용, 속성 값은 변경 가능 */</span><br />
+			input.radio {vertical-align:middle}  <span>/* 인풋 라디오박스 전용 , 속성 값은 변경 가능 */</span><br />
+			input.checkbox {vertical-align:middle}  <span>/* 인풋 체크박스 전용 , 속성 값은 변경 가능 */</span><br /><br />
+
+			&lt;input type=&quot;text&quot; class=&quot;txt&quot; /&gt;<br />
+			&lt;input type=&quot;file&quot; class=&quot;file&quot; /&gt;<br />
+			&lt;input type=&quot;radio&quot; class=&quot;radio&quot; /&gt;<br />
+			&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; /&gt;
+		</code>
+	</li>
+	<li>
+		속성 축약 및 약식 사용 방식은 아래와 같다 <sub><strong>(font의 축약은 사용하지 않는다)</strong></sub>
+		<code>
+			color:#cccccc&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp;&nbsp;color:#ccc<br />
+			color:#ff4400&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp;&nbsp;color:#f40
+		</code>
+		<code>
+			font:normal, 12px/17px&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp;&nbsp;font-weight:normal; font-size:12px; line-height:17px
+		</code>
+		<code>
+			background-color:#fff; background-image:url(&apos;/images/bgbox.gif&apos;); background-position:no-repeat; background-position:0 0;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp;&nbsp;background:#fff url(&apos;/images/bgbox.gif&apos;) no-repeat 0 0
+		</code>
+	</li>
+	<li>
+		크로스브라우징을 위한 핵(hack)은 최소한의 사용을 허용한다.
+		<p class="right">(표준 DTD 전용)</p>
+		<table>
+			<caption></caption>
+			<colgroup>
+			<col width="15%" />
+			<col width="85%" />
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="rows">IE6 핵</th>
+				<td>
+					.panel {width:100px; <strong>*width:102px</strong>}
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">IE7 핵</th>
+				<td>
+					.panel {width:100px; <strong>_width:102px;</strong> padding:10px; line-height:17px}<br />
+					<strong>*+html .panel {width:102px}</strong>
+					<p class="right"><span>* 두 가지 방법 중 필요에 따라 선택적으로 사용한다</span></p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">IE8 핵</th>
+				<td>
+					.panel {width:100px; <strong>width:102px\0</strong>}
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">IE9 핵</th>
+				<td>
+					:root .panel {width:100px; <strong>width:102px\0 !important</strong>}<br />
+					:root .panel {width:102px}
+					<p class="right"><span>* 두 가지 방법 중 필요에 따라 선택적으로 사용한다</span></p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+</ol>
+
+<h2 id="naming">5. 이미지 및 파일명 네이밍, 폴더구조 규칙</h2>
+<ol>
+	<li>
+		공통 네이밍 규칙
+		<ol type="a">
+			<li><strong>영문 소문자</strong>와 <strong>숫자</strong>만 사용,  구분자는 &quot;언더스코어( _ )&quot; 를 사용한다.</li>
+			<li>클래스명 선언 시 &quot;하이푼( - )&quot; 을 사용할 수 있다.</li>
+			<li>숫자는 01, 02, 03&hellip;  으로 넘버링하며, 숫자는 맨 앞으로 올 수 없다.</li>
+			<li>직관적으로 어떤 목적인지 알 수 있는 단어를 사용한다.</li>
+			<li>
+				대문자 소문자를 <b>CamelCase 방식을 사용하지 않는다</b> <sub><strong>(JS함수명 제외)</strong></sub>
+				<code>
+					ex) BtnClose (CamelCase 방식, <strong>X</strong>)&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp;btn_close (<strong>O</strong>)<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NoticeList (CamelCase 방식, <strong>X</strong>)&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp;notice_list (<strong>O</strong>)
+				</code>
+			</li>
+		</ol>
+	</li>
+	<li>
+		이미지 네이밍 규칙
+		<ol type="a">
+			<li>같은 분류의 이미지가 두 개 이상이면, 파일 이름 끝부분에 숫자로 넘버링하여 구분한다.</li>
+			<li><strong>형태_역할 및 성격_숫자, 형태_역할 및 성격_상태</strong>의 구조로 조합한다.</li>
+		</ol>
+		<table>
+			<caption></caption>
+			<colgroup>
+			<col width="20%" />
+			<col width="30%" />
+			<col width="50%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="cols">이미지 종류</th>
+				<th scope="cols">네이밍 구성</th>
+				<th scope="cols">네이밍 예시</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>배너</td>
+				<td>banner_역할_숫자</td>
+				<td>
+					banner_main.gif<br />
+					banner_01.gif, banner_02.gif
+				</td>
+			</tr>
+			<tr>
+				<td>배경</td>
+				<td>bg_역할_숫자</td>
+				<td>
+					bg_subbody.gif, bg_leftmenu.gif
+				</td>
+			</tr>
+			<tr>
+				<td>버튼</td>
+				<td>btn_역할_숫자</td>
+				<td>
+					btn_list.gif, btn_delete.gif
+				</td>
+			</tr>
+			<tr>
+				<td>아이콘</td>
+				<td>icon_역할_숫자</td>
+				<td>icon_list_01.gif, icon_dot_01.gif</td>
+			</tr>
+			<tr>
+				<td>메뉴</td>
+				<td>메뉴영역_역할_숫자</td>
+				<td>
+					topmenu_01.gif, leftmenu_01_on.gif
+				</td>
+			</tr>
+			<tr>
+				<td>텍스트</td>
+				<td>txt_역할_숫자</td>
+				<td>txt_customer_01.gif, txt_join.gif</td>
+			</tr>
+			<tr>
+				<td>타이틀</td>
+				<td>tit_역할_숫자</td>
+				<td>tit_member.gif, tit_bakery_01.gif</td>
+			</tr>
+			<tr>
+				<td>서브타이틀</td>
+				<td>stit_역할_숫자</td>
+				<td>stit_member.gif, stit_bakery_01.gif</td>
+			</tr>
+			<tr>
+				<td>일반이미지</td>
+				<td>img_역할_숫자</td>
+				<td>img_join_01.gif, img_cafe_02.gif</td>
+			</tr>
+			<tr>
+				<td>임시이미지</td>
+				<td>tmp_역할_숫자</td>
+				<td>tmp_intro.gif, tmp_gallery_01.jpg</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		파일 네이밍 규칙
+		<ol type="a">
+			<li><strong>역할 및 성격_형태</strong>의 구조로 조합한다.</li>
+		</ol>
+		<table>
+			<caption></caption>
+			<colgroup>
+			<col width="20%" />
+			<col width="80%" />
+			</colgroup>
+			<tbody>
+			<tr>
+				<th scope="rows">팝업</th>
+				<td>
+					pop_post.html, pop_idsch.html
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">게시판</th>
+				<td>
+					notice_list.html, notice_view.html, notice_write.html, notice_modify.html &hellip;
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">일반<br />컨텐츠</th>
+				<td>
+					introduce.html, history.html, idpwsch.html
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">관련성<br />있는 컨텐츠</th>
+				<td>
+					memberjoin_01.html, memberjoin_02.html, memberjoin_03.html, introduce_01.html, introduce_02.html, introduce_03.html &hellip;
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">CSS</th>
+				<td>
+					layout.css<br />
+					프로젝트명.css&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex) ucompanion.css
+					<p class="right">
+						<span>프로젝트명.css 파일에 layout.css 파일을 import 하여, head 영역에는<br />
+						프로젝트명.css만 링크 시키도록 한다. CSS파일은 필요에 따라 분기 할 수 있다</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">JS</th>
+				<td>
+					common_ui.js<br />
+					jquery_ui.js, jquery_api.js
+				</td>
+			</tr>
+			<tr>
+				<th scope="rows">Include<br />files</th>
+				<td>
+					header.inc, toparea.inc, leftarea.inc, rightarea.inc, bottomarea.inc
+					<p class="right"><span>* 확장자는 해당 프로젝트에 따라 변경 할 수 있다.</span></p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</li>
+	<li>
+		폴더구조
+		<p>클라이언트의 폴더 구조 관련한 요청이 있을 경우는 제외하며, 기본적인 폴더 규칙은 아래를 따른다.</p>
+		<code>
+			/root<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/css (css폴더)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/js (스크립트 폴더)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/images (이미지 폴더)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/commons (공통 플로팅메뉴)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/affiliates (특판제휴)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/dcaffiliate (할인가맹점)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/event (이벤트)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/exhibition (기획전)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/family (THE가족)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/footer (푸터)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/guide (공통가이드폴더)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/header (전체카테고리/즐겨찾기)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/intro (인트로)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/main (메인)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/memberinfo (회원정보 인증)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/myshoping (나의쇼핑)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/mywelfare (나의복지)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/order (주문)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/search (통합검색)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/shop (쇼핑)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/spwelfareproduct (특가복지상품)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/traditionalmarket ()<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/travel (여행)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/tutorial (튜토리얼)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/welfareservice (복지서비스)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/wow (직원특가wow)<br />
+		</code>
+	</li>
+</ol>
+
+<h2 id="reset">6. 초기파일 예시 <sub>- 신규 웹 문서 작성 시에 아래를 참고한다</sub></h2>
+<ol>
+	<li>
+		기본 레이아웃 클래스 이름
+
+<div class="wrap">
+	<div class="toparea">
+		<p>.toparea</p>
+		<div class="gnb">.gnb</div>
+		<h1 class="logo">h1.logo</h1>
+		<div class="topmenu">.topmenu</div>
+		<div class="subvisual">.subvisual or h2</div>
+	</div>
+	<div class="leftarea">
+		<p>.leftarea</p>
+		<div class="leftmenu">.leftmenu</div>
+		<div class="bannerarea">.bannerarea</div>
+		<div class="cscenter">.cscenter</div>
+	</div>
+	<div class="contentsarea">
+		<p>.contentsarea</p>
+		<div class="pagenavi">.pagenavi</div>
+		<div class="contentsbox">contentsbox or<br />각 컨텐츠 성격에 맞는 컨텐츠 클래스명</div>
+	</div>
+	<div class="rightarea">
+		<p>.rightarea</p>
+		<div class="custom">
+			.해당 UI의 성격에 맞는 클래스명을 지정한다.
+		</div>
+		<div class="adbox">.adbox</div>
+	</div>
+	<div class="bottomarea">
+		<p>.bottomarea</p>
+		<div class="copyright">.copyright</div>
+	</div>
+
+</div>
+
+	</li>
+	<li>
+		HTML5 레이아웃 초기파일
+		<code>
+
+&lt;!doctype html&gt;<br />
+&lt;html lang="ko"&gt;<br />
+&lt;head&gt;<br />
+&lt;meta charset="UTF-8"&gt;<br />
+&lt;meta name="Keywords" content=""&gt;<br />
+&lt;meta name="Description" content=""&gt;<br />
+&lt;title&gt;지원차량 - 타타대우 상용차내비게이션 업데이트 서비스&lt;/title&gt;<br />
+&lt;link rel="stylesheet" type="text/css" href="../css/font.css"&gt;&lt;!-- 웹폰트 스타일 --&gt;<br />
+&lt;link rel="stylesheet" type="text/css" href="../css/style.css"&gt;&lt;!-- 프론트 스타일 --&gt;<br />
+&lt;script type="text/javascript" src="../js/jquery-1.11.1.min.js"&gt;&lt;/script&gt;&lt;!-- 제이쿼리 api --&gt;<br />
+&lt;script type="text/javascript" src="../js/jquery.vticker-min.js"&gt;&lt;/script&gt;&lt;!-- 수직자동상승 스크립트 (메인페이지 공지사항용) --&gt;<br />
+&lt;script type="text/javascript" src="../js/ui.js"&gt;&lt;/script&gt;&lt;!-- 셀렉트박스, 탭메뉴 등 스크립트 --&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&lt;div class="tatadaewoonaviupdate_wrap"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- S: 헤더 --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;header class="toparea"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 class="logo"&gt;&lt;a href="#"&gt;&lt;img src="../images/common/logo_hyundai.png" alt="HYUNDAI" /&gt;&lt;/a&gt;&lt;/h1&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;img src="../images/common/txt_header.png" alt="타타대우 상용차내비게이션 업데이트 서비스" /&gt;&lt;a href="#"&gt;Product by kt&lt;/a&gt;&lt;/p&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="topmenu"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="../notice/notice_list.html"&gt;공지사항&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="../smartupdatepartner/smartupdatepartner.html"&gt;스마트 업데이트 파트너&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="../howtoupdate/howtoupdate_01.html"&gt;업데이트 방법&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="on"&gt;&lt;a href="../supportingvehicle/supportingvehicle.html"&gt;지원차량&lt;/a&gt;&lt;/li&gt;&lt;!-- 해당 서브메뉴에 'on' 클래스 추가 --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="../faq/faq_list.html"&gt;자주하는 질문&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- //E: 헤더 --&gt;<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- S: 컨테이너 --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;section class="container"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- 컨텐츠 영역. 서브페이지 컨텐츠 작업시 여기에 작성 --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- //E: 컨테이너 --&gt;<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- S: 푸터 --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;footer class="bottomarea"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="logo"&gt;&lt;img src="../images/common/logo_kt.png" alt="Product by kt" /&gt;&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="copyright"&gt;Copyright&copy; 2017 kt corp. All rights reserved.&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;address&gt;&lt;img src="../images/common/icon_email.png" alt="email" /&gt;고객문의 : &lt;a href="mailto:help@tatadaewoonaviupdate.co.kr"&gt;help@tatadaewoonaviupdate.co.kr&lt;/a&gt;&lt;/address&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="selectbox"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="fams_w"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="fams_tle_box" onmouseover="viewItem('ft_fams')" onmouseout="hideItem('ft_fams')"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="fams_tle"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAMILY SITE
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="ft_fams" class="layer_fams" style="display:none;" onmouseover="viewItem('ft_fams')" onmouseout="hideItem('ft_fams')"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="lfams_list"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;a href="#" title="새 창에서 열기" target="_blank"&gt;패밀리사이트1&lt;/a&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;a href="#" title="새 창에서 열기" target="_blank"&gt;패밀리사이트2&lt;/a&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;a href="#" title="새 창에서 열기" target="_blank"&gt;패밀리사이트3&lt;/a&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- //E: 푸터 --&gt;<br />
+<br />
+&lt;/div&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;<br />
+
+<br />
+		</code>
+		<p class="right"><span>* 각 속성은 필요에 따라 수정을 할 수 있다. 하지만 가이드의 범위 안에서 수정 후 상호 확인 요함.</span></p>
+		<code>
+			<b>웹폰트(나눔스케어고딕, 나눔고딕)</b><br />
+/* 웹폰트 */<br />
+@font-face { <br />
+font-family:'nanumgothic';<br />
+src:url('../font/nanumgothic.eot');<br />
+src:url('../font/nanumgothic.eot?#iefix') format('embedded-opentype'), url('../font/nanumgothic.woff2') format('woff2'), url('../font/nanumgothic.woff') format('woff'), url('../font/nanumgothic.ttf') format('truetype'); url('../font/nanumgothic.svg#nanumgothic') format('svg');<br />
+font-weight:normal;<br />
+font-style:normal;<br />
+}<br />
+.nanumgothic_regular {font-family:nanumgothic !importatn}<br />
+@font-face { <br />
+font-family:'nanumgothicbold';<br />
+src:url('../font/nanumgothicbold.eot');<br />
+src:url('../font/nanumgothicbold.eot?#iefix') format('embedded-opentype'), url('../font/nanumgothicbold.woff2') format('woff2'), url('../font/nanumgothicbold.woff') format('woff'), url('../font/nanumgothicbold.ttf') format('truetype'); url('../font/nanumgothicbold.svg#nanumgothicbold') format('svg');<br />
+font-weight:bold;<br />
+font-style:normal;<br />
+}<br />
+.nanumgothic_bold {font-family:nanumgothicbold !important}<br />
+<br />
+@font-face { <br />
+font-family:'nanumsquarer';<br />
+src:url('../font/nanumsquarer.eot');<br />
+src:url('../font/nanumsquarer.eot?#iefix') format('embedded-opentype'), url('../font/nanumsquarer.woff2') format('woff2'), url('../font/nanumsquarer.woff') format('woff'), url('../font/nanumsquarer.ttf') format('truetype'); url('../font/nanumsquarer.svg#nanumsquarer') format('svg');<br />
+font-weight:normal;<br />
+font-style:normal;<br />
+}<br />
+.nanumsquare_regular {font-family:nanumsquarer !important}<br />
+<br />
+@font-face { <br />
+font-family:'nanumsquareb';<br />
+src:url('../font/nanumsquareb.eot');<br />
+src:url('../font/nanumsquareb.eot?#iefix') format('embedded-opentype'), url('../font/nanumsquareb.woff2') format('woff2'), url('../font/nanumsquareb.woff') format('woff'), url('../font/nanumsquareb.ttf') format('truetype'); url('../font/nanumsquareb.svg#nanumsquareb') format('svg');<br />
+font-weight:bold;<br />
+font-style:normal;<br />
+}<br />
+.nanumsquare_bold {font-family:nanumsquareb !important}<br />
+		</code>
+		<p class="right"><span>* 각 속성은 필요에 따라 수정을 할 수 있다. 하지만 가이드의 범위 안에서 수정 후 상호 확인 요함.</span></p>
+	</li>
+</ol>
+
+<!-- jquery -->	
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<!-- easing plugin ( optional ) -->
+<script src="js/easing.js" type="text/javascript"></script>
+<!-- UItoTop plugin -->
+<script src="js/jquery.ui.totop.js" type="text/javascript"></script>
+<!-- Starting the plugin -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		/*
+		var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+		};
+		*/
+		
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		
+	});
+</script>
+
+</body>
+</html>

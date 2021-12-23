@@ -62,7 +62,7 @@ body.mainbody {background:#1D1D1D}
 .tatadaewoonaviupdate_wrap .toparea li a:active,
 .tatadaewoonaviupdate_wrap .toparea li a:focus {height:90px; border-top:2px solid #04315e; color:#04315e; text-decoration:none}
 
-.tatadaewoonaviupdate_wrap .container {background-color:#fff}
+.tatadaewoonaviupdate_wrap .container {min-height: 690px; background-color:#fff}
 .tatadaewoonaviupdate_wrap .container.main {background-color:#fff; background:url('../images/main/img_main.png') no-repeat 50% 0}
 
 .tatadaewoonaviupdate_wrap .container.main > div {width:1900px; margin:0 auto; padding-top:50px}
@@ -322,7 +322,7 @@ div.popwrap .tit_area p {padding:14px 18px 15px; border-top:2px solid #fff; bord
 
 .supvehicle .carname {margin-top: 20px; font-weight: bold; font-size: 20px}
 .supvehicle .carsubname {color: gray; font-size: 20px}
-.supvehicle ul {overflow:hidden; position:relative; padding: 250px 0 0 220px}
+.supvehicle ul {overflow:hidden; position:relative; margin-left: 10px; padding: 290px 0 0 220px}
 .supvehicle ul li {float:left; position:relative; margin-bottom: 100px}
 .supvehicle ul li:first-child {margin-left:0}
 .supvehicle ul li + li {}
